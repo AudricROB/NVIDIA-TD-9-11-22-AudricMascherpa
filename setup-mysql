@@ -1,0 +1,19 @@
+• Installer MySQL :
+
+Pour installer MySQL, il faut mettre à jour l'index des packages sur le serveur :
+$ sudo apt update
+
+Puis on installe le paquet mysql-serveur :
+$ sudo apt install mysql-server
+
+• Importer une base de donnée :
+
+Pour importer à partir d'un lien :
+$ wget "url u lien"
+
+Puis on unzip le fichier :
+$ unzip mysqldatabase.zip
+(il faut avoir au préalable installer le packet unzip avec a commande : $ sudo apt install unzip )
+
+Et enfin on se connecte à la base de donnée :
+$ mysql -u username -p < mysqlsampledatabase.sql
