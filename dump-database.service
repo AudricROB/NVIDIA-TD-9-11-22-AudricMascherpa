@@ -1,0 +1,9 @@
+[Unit]
+Description=backup a database
+After=network.target
+
+[Service]
+WorkingDirectory=/
+User=root
+ExecStart=/home/audric/Desktop/dump-database.sh
+Type=oneshot
