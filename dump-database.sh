@@ -13,3 +13,5 @@ then
     rm /<path>/"$(ls -t /<path> | tail -1)"; 
     echo "$date : The oldest backup has been removed" >> $logfile
 fi
+
+ls -lh
