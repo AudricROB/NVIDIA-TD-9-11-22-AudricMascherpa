@@ -1,19 +1,33 @@
-• Installer MySQL :
+• MySQL installer :
 
-Pour installer MySQL, il faut mettre à jour l'index des packages sur le serveur :
+To install MySQL, you need to update the package index on the server:
 $ sudo apt update
 
-Puis on installe le paquet mysql-serveur :
+Then we install the MySQL-server package :
 $ sudo apt install mysql-server
 
-• Importer une base de donnée :
 
-Pour importer à partir d'un lien :
+• Configure MySQL :
+
+Pour les nouvelles installations de MySQL il faut exécuter le script de sécurité inclus du SGBD. 
+Ce script modifie certaines des options par défaut les moins sécurisées pour des éléments tels que les connexions root à distance et les exemples d'utilisateurs.
+Tout d’abord, afin d’éviter une boucle récursive lors du choix du mot de passe, on doit remplacer la méthode d'authentification de l'utilisateur root par une méthode utilisant un mot de passe. 
+Ainsi on utilise la commande suivante une fois dans MySQL :
+mysql > ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+
+Puis on peut enfin lancer le script d’installation sécurisé :
+$ sudo mysql_secure_installation
+
+
+
+• Import a database :
+
+To import from a link:
 $ wget "url u lien"
 
-Puis on unzip le fichier :
+Then we unzip the file :
 $ unzip mysqldatabase.zip
-(il faut avoir au préalable installer le packet unzip avec a commande : $ sudo apt install unzip )
+(you must first install the unzip package with a command : $ sudo apt install unzip )
 
-Et enfin on se connecte à la base de donnée :
+Finally we connect to the database :
 $ mysql -u username -p < mysqlsampledatabase.sql
