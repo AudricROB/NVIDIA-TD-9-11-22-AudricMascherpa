@@ -3,7 +3,8 @@ Description= restart every 10 minutes
 
 [Timer]
 OnCalendar=*:0/10:0
-# OnCalendar=minutely
+AccuracySec=1s
+Unit=backup.Service
 
 [Install]
 WantedBy=timers.target
